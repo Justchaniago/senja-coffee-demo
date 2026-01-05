@@ -1,65 +1,92 @@
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///senja_coffee.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
 
-# Product Model
-class Product(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    price = db.Column(db.Integer, nullable=False)
-    category = db.Column(db.String(50), nullable=False)
-    image_url = db.Column(db.String(255), nullable=False)
+# Hardcoded product data (No Database - Perfect for Vercel)
+PRODUCTS = [
+    {
+        "id": 1,
+        "name": "Espresso Blend",
+        "description": "A bold, rich blend for classic espresso lovers.",
+        "price": 35000,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 2,
+        "name": "Cold Brew",
+        "description": "Smooth, refreshing, slow-steeped cold brew.",
+        "price": 40000,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 3,
+        "name": "Cappuccino",
+        "description": "Classic Italian coffee with steamed milk foam.",
+        "price": 36000,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 4,
+        "name": "V60 Manual Brew",
+        "description": "Single-origin coffee brewed to perfection.",
+        "price": 45000,
+        "category": "Coffee",
+        "image_url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 5,
+        "name": "Berry Smoothie",
+        "description": "Fresh mixed berries blended with yogurt and honey.",
+        "price": 42000,
+        "category": "Non-Coffee",
+        "image_url": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 6,
+        "name": "Matcha Latte",
+        "description": "Premium Japanese matcha with creamy milk.",
+        "price": 40000,
+        "category": "Non-Coffee",
+        "image_url": "https://images.unsplash.com/photo-1536013317810-27e2cd2b40df?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 7,
+        "name": "Butter Croissant",
+        "description": "Flaky, buttery pastry baked fresh every morning.",
+        "price": 25000,
+        "category": "Pastry",
+        "image_url": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 8,
+        "name": "Almond Croissant",
+        "description": "Buttery croissant filled with almond cream.",
+        "price": 28000,
+        "category": "Pastry",
+        "image_url": "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=600&q=80"
+    }
+]
 
-def setup_db():
-    db.create_all()
-    if Product.query.first():
-        return
-    products = [
-        Product(
-            name="Espresso Blend",
-            description="A bold, rich blend for classic espresso lovers.",
-            price=35000,
-            category="Coffee",
-            image_url="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80"
-        ),
-        Product(
-            name="Cold Brew",
-            description="Smooth, refreshing, slow-steeped cold brew.",
-            price=40000,
-            category="Coffee",
-            image_url="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?auto=format&fit=crop&w=600&q=80"
-        ),
-        Product(
-            name="Berry Smoothie",
-            description="Fresh mixed berries blended with yogurt and honey.",
-            price=42000,
-            category="Non-Coffee",
-            image_url="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80"
-        ),
-        Product(
-            name="Butter Croissant",
-            description="Flaky, buttery pastry baked fresh every morning.",
-            price=25000,
-            category="Pastry",
-            image_url="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80"
-        ),
-    ]
-    db.session.bulk_save_objects(products)
-    db.session.commit()
+# Helper function to create product objects
+class Product:
+    def __init__(self, data):
+        self.id = data['id']
+        self.name = data['name']
+        self.description = data['description']
+        self.price = data['price']
+        self.category = data['category']
+        self.image_url = data['image_url']
 
 @app.route('/')
 def home():
-    setup_db()
-    products = Product.query.all()
+    products = [Product(p) for p in PRODUCTS]
     categories = {}
     for product in products:
         categories.setdefault(product.category, []).append(product)
+    
     category_grid = [
         {"name": "Coffee", "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"},
         {"name": "Equipment", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"},
@@ -71,10 +98,11 @@ def home():
 @app.route('/shop')
 def shop():
     category = request.args.get('category')
+    products = [Product(p) for p in PRODUCTS]
+    
     if category and category.lower() != "all":
-        products = Product.query.filter(Product.category.ilike(category)).all()
-    else:
-        products = Product.query.all()
+        products = [p for p in products if p.category.lower() == category.lower()]
+    
     categories = ["All", "Coffee", "Non-Coffee", "Pastry"]
     return render_template('shop.html', products=products, active_category=category or "All", categories=categories)
 
