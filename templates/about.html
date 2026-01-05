@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Senja Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo"><a href="{{ url_for('home') }}">SENJA.</a></div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a href="{{ url_for('wholesale') }}">Wholesale</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon" aria-label="Search">
+                    <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </a>
+                <a href="#" class="nav-icon" aria-label="Profile">
+                    <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M2 20c0-4 8-6 10-6s10 2 10 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">ABOUT SENJA COFFEE</h1>
+            <div class="page-underline"></div>
+            <p class="page-subtitle">Crafting exceptional coffee experiences since 2020</p>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <main>
+        <section class="about-detail-section">
+            <div class="about-detail-container">
+                <div class="about-detail-grid">
+                    <div class="about-detail-image">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Coffee brewing">
+                    </div>
+                    <div class="about-detail-text">
+                        <h2 class="section-title">Our Story</h2>
+                        <div class="section-underline"></div>
+                        <p>Founded in 2020, Senja Coffee began with a simple mission: to bring the finest Indonesian coffee beans to coffee lovers around the world. Our name "Senja" means twilight in Indonesian, representing the perfect moment to enjoy a cup of coffee.</p>
+                        <p>We work directly with local farmers across Indonesia's coffee-growing regions, from Sumatra to Java, ensuring fair trade practices and sustainable farming methods. Every bean is carefully selected, roasted to perfection, and packaged with care.</p>
+                        <p>Today, Senja Coffee serves thousands of customers through our cafes and online platform, maintaining our commitment to quality, sustainability, and community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="values-container">
+                <h2 class="section-title">Our Values</h2>
+                <div class="section-underline"></div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Quality First</h3>
+                        <p>We source only the finest beans and maintain strict quality control throughout our roasting process.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3>Sustainability</h3>
+                        <p>We practice environmentally responsible sourcing and support sustainable farming methods.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Community</h3>
+                        <p>We build lasting relationships with our farmers and contribute to their communities' growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Partner Farms</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Cafe Locations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Arabica Beans</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/628123456789?text=Halo, saya mau tanya tentang Senja Coffee..." class="wa-float" target="_blank" aria-label="Chat via WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">SENJA.</div>
+            <p class="footer-message">Brewing excellence, one cup at a time.<br>From Indonesian highlands to your cup.</p>
+            <div class="footer-copy">
+                &copy; 2026 Senja Coffee. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

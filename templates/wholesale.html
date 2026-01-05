@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wholesale - Senja Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo"><a href="{{ url_for('home') }}">SENJA.</a></div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                <li><a href="{{ url_for('wholesale') }}">Wholesale</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="nav-icon" aria-label="Search">
+                    <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </a>
+                <a href="#" class="nav-icon" aria-label="Profile">
+                    <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M2 20c0-4 8-6 10-6s10 2 10 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wholesale Hero -->
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">WHOLESALE PROGRAM</h1>
+            <div class="page-underline"></div>
+            <p class="page-subtitle">Partner with us to bring premium coffee to your business</p>
+        </div>
+    </header>
+
+    <!-- Wholesale Content -->
+    <main>
+        <section class="wholesale-intro-section">
+            <div class="wholesale-container">
+                <div class="wholesale-intro-text">
+                    <h2 class="section-title">Why Partner With Us?</h2>
+                    <div class="section-underline"></div>
+                    <p>Senja Coffee's wholesale program is designed for cafes, restaurants, hotels, and businesses looking to serve exceptional coffee. We offer competitive pricing, flexible order quantities, and dedicated support to help your business succeed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-benefits-section">
+            <div class="wholesale-container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-number">01</div>
+                        <h3>Premium Quality</h3>
+                        <p>100% Arabica beans sourced directly from Indonesian farms and roasted to perfection.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-number">02</div>
+                        <h3>Competitive Pricing</h3>
+                        <p>Volume-based discounts and flexible payment terms to support your business growth.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-number">03</div>
+                        <h3>Reliable Delivery</h3>
+                        <p>Consistent supply chain with scheduled deliveries to ensure you never run out of stock.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-number">04</div>
+                        <h3>Barista Training</h3>
+                        <p>Free training sessions for your staff to ensure perfect coffee preparation every time.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-number">05</div>
+                        <h3>Marketing Support</h3>
+                        <p>Co-branded materials and marketing assets to help promote your coffee offerings.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-number">06</div>
+                        <h3>Dedicated Account Manager</h3>
+                        <p>Personal support from our wholesale team to address your specific business needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-packages-section">
+            <div class="wholesale-container">
+                <h2 class="section-title">Wholesale Packages</h2>
+                <div class="section-underline"></div>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Starter</h3>
+                            <div class="package-price">5-20 kg/month</div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>10% discount on retail price</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Bi-weekly delivery options</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Email support</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Basic marketing materials</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/628123456789?text=Halo, saya tertarik dengan Wholesale Package Starter..." class="package-btn" target="_blank">Get Started</a>
+                    </div>
+
+                    <div class="package-card featured">
+                        <div class="package-badge">POPULAR</div>
+                        <div class="package-header">
+                            <h3>Business</h3>
+                            <div class="package-price">21-50 kg/month</div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>20% discount on retail price</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Weekly delivery options</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Priority phone & email support</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Free barista training (2 sessions)</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Co-branded marketing materials</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/628123456789?text=Halo, saya tertarik dengan Wholesale Package Business..." class="package-btn" target="_blank">Get Started</a>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Enterprise</h3>
+                            <div class="package-price">50+ kg/month</div>
+                        </div>
+                        <div class="package-features">
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>30% discount on retail price</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Custom delivery schedule</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Dedicated account manager</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Unlimited barista training</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Full marketing support</span>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Custom blend development</span>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/628123456789?text=Halo, saya tertarik dengan Wholesale Package Enterprise..." class="package-btn" target="_blank">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wholesale-cta-section">
+            <div class="wholesale-cta-content">
+                <h2>Ready to Partner With Us?</h2>
+                <p>Contact our wholesale team today to discuss your business needs and get a custom quote.</p>
+                <a href="https://wa.me/628123456789?text=Halo, saya tertarik dengan program wholesale Senja Coffee..." class="cta-button" target="_blank">Contact Wholesale Team</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/628123456789?text=Halo, saya mau tanya tentang wholesale..." class="wa-float" target="_blank" aria-label="Chat via WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">SENJA.</div>
+            <p class="footer-message">Brewing excellence, one cup at a time.<br>From Indonesian highlands to your cup.</p>
+            <div class="footer-copy">
+                &copy; 2026 Senja Coffee. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
