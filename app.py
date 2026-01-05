@@ -106,6 +106,24 @@ def about():
 def wholesale():
     return render_template('wholesale.html')
 
+@app.route('/coffee')
+def coffee():
+    products = [Product(p) for p in PRODUCTS if p['category'] == 'Coffee']
+    return render_template('category.html', category_name="Coffee", products=products)
+
+@app.route('/equipment')
+def equipment():
+    return render_template('category.html', category_name="Equipment", products=[])
+
+@app.route('/merch')
+def merch():
+    return render_template('category.html', category_name="Merch", products=[])
+
+@app.route('/pastry')
+def pastry():
+    products = [Product(p) for p in PRODUCTS if p['category'] == 'Pastry']
+    return render_template('category.html', category_name="Pastry", products=products)
+
 if __name__ == '__main__':
     if not os.path.exists('senja_coffee.db'):
         with app.app_context():
