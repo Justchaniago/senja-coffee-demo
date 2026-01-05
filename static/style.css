@@ -568,6 +568,65 @@ footer {
   letter-spacing: 1px;
 }
 
+/* Empty Category Styles */
+.empty-category {
+  max-width: 600px;
+  margin: 5rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  margin-bottom: 2rem;
+  opacity: 0.5;
+}
+
+.empty-icon svg {
+  width: 100px;
+  height: 100px;
+}
+
+.empty-category h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-green);
+}
+
+.empty-category p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--accent-green), #5a7a68);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+.back-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(107, 142, 120, 0.3);
+}
+
+.category-description {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Shop Page Styles */
 .shop-header {
   background: var(--bg-dark);
