@@ -45,14 +45,6 @@ PRODUCTS = [
         "image_url": "https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=600&q=80"
     },
     {
-        "id": 6,
-        "name": "Matcha Latte",
-        "description": "Premium Japanese matcha with creamy milk.",
-        "price": 40000,
-        "category": "Non-Coffee",
-        "image_url": "https://images.unsplash.com/photo-1536013317810-27e2cd2b40df?auto=format&fit=crop&w=600&q=80"
-    },
-    {
         "id": 7,
         "name": "Butter Croissant",
         "description": "Flaky, buttery pastry baked fresh every morning.",
